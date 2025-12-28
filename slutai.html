@@ -1,53 +1,82 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>AronAI - Multi-Provider Chat</title>
 
-<head>
-    <title>
-        Qwen
-    </title>
+    <meta charset="utf-8" />
 
-    <meta charset="utf-8">
-    
-    <link rel="stylesheet" href="./slutai.css">
+    <!-- Google Fonts - Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./slutai.css" />
     <!-- 添加GitHub Markdown CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css"
+    />
+  </head>
 
-    
-</head>
-
-<body>
+  <body>
     <script src="./slutai.js" type="module"></script>
 
     <div class="chat-container">
-        <div class="chat-header">
-            <h1>AronGPT
-                <span style="font-size: small;">
-                    powered by Qwen
-                </span>
-            </h1>
-        </div>
+      <div class="chat-header">
+        <h1>
+          AronAI
+          <span style="font-size: small"> Multi-Provider Chat Assistant </span>
+        </h1>
+      </div>
 
-        <div class="fetchAPI">
-            <input type="text" class="inputAPI" placeholder="Input your own API KEY" id="userAPI">
-            <input type="text" class="inputAPI" placeholder="Input system prompt" id="userPrompt">
-        </div>
+      <div class="fetchAPI">
+        <input
+          type="text"
+          class="inputAPI"
+          placeholder="API Endpoint URL (e.g., https://api.openai.com/v1/chat/completions)"
+          id="apiEndpoint"
+        />
+        <input
+          type="text"
+          class="inputAPI"
+          placeholder="Model Name (e.g., gpt-4, qwen-plus)"
+          id="modelName"
+        />
+        <input
+          type="text"
+          class="inputAPI"
+          placeholder="API Key"
+          id="userAPI"
+        />
+        <input
+          type="text"
+          class="inputAPI"
+          placeholder="System Prompt (optional)"
+          id="userPrompt"
+        />
+      </div>
 
-        <div class="chat-messages" id="chat-messages">
-            <div class="message ai-message">
-                <div class="message-content markdown-body" id="aiAnswer">
-                    Hello! How can I assist you today?
-                </div>
-            </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="message ai-message">
+          <div class="message-content markdown-body" id="aiAnswer">
+            Hello! How can I assist you today?
+          </div>
         </div>
+      </div>
 
-        <div class="chat-input-container">
-            <input type="text" id="userInput" class="chat-input" placeholder="Message Qwen...">
-            <button id="clearButton" class="clear-button">Clear</button>
-            <button id="sendButton" class="send-button">Send</button>
-        </div>
+      <div class="chat-input-container">
+        <input
+          type="text"
+          id="userInput"
+          class="chat-input"
+          placeholder="Type your message..."
+        />
+        <button id="clearButton" class="clear-button">Clear</button>
+        <button id="sendButton" class="send-button">Send</button>
+      </div>
     </div>
-
-    
-</body>
-
+  </body>
 </html>
